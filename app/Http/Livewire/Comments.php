@@ -14,7 +14,7 @@ class Comments extends Component
 
     public function mount()
     {
-        $inintialComments = Comment::all();
+        $inintialComments = Comment::latest()->get();
         $this->comments = $inintialComments;
     }
 
