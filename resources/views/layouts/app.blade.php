@@ -12,17 +12,22 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <livewire:styles />
     <livewire:scripts />
+    <script src="{{asset('js/app.js')}}"></script>
+
 </head>
 
-<body class="flex justify-center">
-    <div class="w-10/12 my-10 flex">
-        <div class="w-5/12 rounded border p-2">
-            <livewire:tickets />
-        </div>
-        <div class="w-7/12 mx-2 rounded border p-2">
-            <livewire:comments />
+<body class="flex flex-wrap justify-center">
+    <div class="flex w-full justify-between px-4 bg-purple-900 text-white">
+        <a class="mx-3 py-4" href="/">Home</a>
+        <div class="py-4">
+            <a class="mx-3" href="/login">Login</a>
+            <a class="mx-3" href="/register">Register</a>
 
         </div>
+
+    </div>
+    <div class="my-10 flex justify-center">
+        @yield('content')
     </div>
 
 
