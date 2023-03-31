@@ -18,5 +18,9 @@
 //     return view('welcome');
 // });
 Route::get('/' , App\Http\Livewire\Home::class);
-Route::get('/login' , App\Http\Livewire\Login::class);
-Route::get('/register' , App\Http\Livewire\Register::class);
+// Route::get('/login' , App\Http\Livewire\Login::class);
+// Route::get('/register' , App\Http\Livewire\Register::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
