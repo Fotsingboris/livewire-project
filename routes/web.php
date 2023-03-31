@@ -17,9 +17,12 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/' , App\Http\Livewire\Home::class);
+// Route::get('/' , App\Http\Livewire\Home::class);
 // Route::get('/login' , App\Http\Livewire\Login::class);
 // Route::get('/register' , App\Http\Livewire\Register::class);
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 Auth::routes();
 

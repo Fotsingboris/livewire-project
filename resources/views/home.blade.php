@@ -1,23 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+<div class="flex justify-center">
+    <div class="w-10/12 my-10 flex">
+        <div class="w-5/12 rounded border p-2">
+            <livewire:tickets />
+        </div>
+        <div class="w-7/12 mx-2 rounded border p-2">
+            <livewire:comments />
+    
         </div>
     </div>
 </div>
+
 @endsection
