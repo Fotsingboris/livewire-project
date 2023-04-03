@@ -42,7 +42,7 @@ class Comments extends Component
         $this->validate(['newComment' => 'required|max:255']);
         $image          = $this->storeImage();
         $createdComment = Comment::create([
-            'body' => $this->newComment, 'user_id' => 1,
+            'body' => $this->newComment, 'user_id' => auth()->id(),
             'image' => $image,
             'support_tickets_id' => $this->ticketId,
         ]);
@@ -75,7 +75,7 @@ class Comments extends Component
     public function render()
     {
         return view('livewire.comments', [
-            'comments' => Comment::where('support_tickets_id',$this->ticketId)->latest()->paginate(2),
+            'comments' => Comment::where('support_tickets_id',$this->ticketId)->latest()->paginate(1),
         ]);
     }
 }
